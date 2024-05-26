@@ -8,21 +8,30 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to SweSkins</h1>
+        <div class="container">
+            <h1 class="logo">SweSkins</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
     <main>
-        <section id="about">
+        <section id="hero">
+            <div class="container">
+                <h2>Welcome to SweSkins</h2>
+                <p>Your ultimate destination for thrilling CS:GO case openings.</p>
+                <a href="#cases" class="btn">Open a Case</a>
+            </div>
+        </section>
+        <section id="about" class="container">
             <h2>About SweSkins</h2>
             <p>SweSkins was founded by passionate gamers who wanted to create a fun and fair platform for CS:GO enthusiasts to get the best skins. Our mission is to provide a thrilling experience while maintaining the highest standards of fairness and security.</p>
         </section>
-        <section id="how-it-works">
+        <section id="how-it-works" class="container">
             <h2>How It Works</h2>
             <ol>
                 <li>Create an Account</li>
@@ -31,13 +40,32 @@
                 <li>Withdraw Skins</li>
             </ol>
         </section>
+        <section id="cases" class="container">
+            <h2>Open a Case</h2>
+            <div class="case-grid">
+                <div class="case">
+                    <img src="images/case1.jpg" alt="Case 1">
+                    <button class="btn">Open</button>
+                </div>
+                <div class="case">
+                    <img src="images/case2.jpg" alt="Case 2">
+                    <button class="btn">Open</button>
+                </div>
+                <div class="case">
+                    <img src="images/case3.jpg" alt="Case 3">
+                    <button class="btn">Open</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:support@sweskins.com">support@sweskins.com</a></p>
-            <p>Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
-        </section>
+        <div class="container">
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Email: <a href="mailto:support@sweskins.com">support@sweskins.com</a></p>
+                <p>Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
+            </section>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
@@ -47,20 +75,29 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 1em 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    background-color: #444;
-    text-align: center;
 }
 
 nav ul li {
@@ -73,12 +110,42 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 1em;
+#hero {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
 }
 
-section {
-    margin-bottom: 2em;
+#hero .btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#about, #how-it-works, #cases {
+    margin: 2em 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.case-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.case {
+    text-align: center;
+}
+
+.case img {
+    width: 150px;
+    height: 150px;
 }
 
 footer {
@@ -87,9 +154,6 @@ footer {
     text-align: center;
     padding: 1em 0;
 }
-// Add your JavaScript functionality here
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('SweSkins website loaded');
 });
-
